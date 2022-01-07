@@ -1,27 +1,30 @@
-<mat-card class="example-card">
-    <mat-card-header>
-        <mat-card-title>Login</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <mat-card-actions>
-            <form class="login-form">
-                <div class="container-sm" cellspacing="0">
-                    <div class="was-validated">
-                        <label for="inputEmail" class="col-sm-2 col-form-label">Email address</label>
-                        <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" required>
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-                    <!-- <div class="mb-3">
-                        <label for="inputUsername" class="col-sm-2 col-form-label">User Name</label>
-                        <input type="text" class="form-control" id="inputUsername" placeholder="Username" required>
-                    </div> -->
-                    <div class="was-validated">
-                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                        <div class="valid-feedback">Valid.</div>
-                        <div class="invalid-feedback">Please fill out this field.</div>
-                    </div>
-                </div>
+<!-- <div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-                <button mat-raised-button (click)="login()" color="primary">Login</button>
+                <div class="form-group">
+                    <label for="email" class='fa fa-envelope'></label>
+                    <input type="email" placeholder="Email Address" formControlName="email"> -->
+<!-- <span class="text-danger" *ngIf="loginForm.controls.email.errors && loginForm.controls.email.touched"><br>Invalid Email Address</span> -->
+<!-- </div>
+
+                <div class="form-group">
+                    <label for="password" class="fa fa-lock"></label>
+                    <input type="password" placeholder="Password" formControlName="password"> -->
+<!-- <span class="text-danger" *ngIf="loginForm.controls.password.errors && loginForm.controls.password.touched"><br>Invalid Password</span> -->
+<!-- </div>
+
+                <div class="text-center">
+                    <button id="submitButton" type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+                </div>
+                <div class="text-center text-success" *ngIf="successMessage">{{successMessage}}</div>
+
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+
+Login is working

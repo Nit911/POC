@@ -1,27 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
 import { NgModule } from '@angular/core';
-import { CustomMaterialModule } from './core/material.module';
-import { AppRoutingModule } from './core/app-routing.module';
-import {FormsModule} from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 import { LoginComponent } from './login/login.component';
-import { UserComponent } from './user/user.component';
+import { TestComponent } from './test/test.component';
+// import { AppRoutingModule } from './core/app-routing.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    UserComponent,
+    TestComponent,
+    // LoginComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    CustomMaterialModule,
+    ReactiveFormsModule,
     FormsModule,
-    AppRoutingModule
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

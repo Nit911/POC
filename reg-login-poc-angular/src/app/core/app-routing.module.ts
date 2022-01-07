@@ -1,13 +1,13 @@
 import {NgModule}  from '@angular/core';
 
 import { RouterModule, Routes } from '@angular/router';
-import {UserComponent} from '../user/user.component';
-import {LoginComponent} from '../login/login.component';
+import { LoginComponent } from '../login/login.component';
+import { UserComponent } from '../user/user.component';
 
 const routes: Routes = [
+  {path : '', component : LoginComponent},
   { path: 'user', component: UserComponent },
   { path: 'login', component: LoginComponent },
-  {path : '', component : LoginComponent}
 ];
 
 @NgModule({
@@ -16,7 +16,8 @@ const routes: Routes = [
   ],
   exports: [
     RouterModule,
-    //UserComponent
+    UserComponent,
+    LoginComponent
   ],
   declarations: [],
 })

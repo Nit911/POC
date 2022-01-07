@@ -1,52 +1,51 @@
-<mat-card class="example-card">
-    <mat-card-header>
-        <mat-card-title>Login Successful! Add User </mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <form class="user-form">
-            <div class="container-sm" cellspacing="0">
-                <div class="was-validated">
-                    <label for="inputName" class="col-sm-2 col-form-label">First Name</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="First Name" required>
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="regForm" (ngSubmit)="register()">
+
+                <div class="form-group">
+                    <label for="name" class="fa fa-user"></label>
+                    <input type="text" placeholder="Enter Your Name" formControlName="name">
+                    <span class="text-danger" *ngIf="regForm.controls.name.errors && regForm.controls.name.touched">
+                        <br>Name is Required
+                    </span>
                 </div>
-                <div class="was-validated">
-                    <label for="inputName" class="col-sm-2 col-form-label">Last Name</label>
-                    <input type="text" class="form-control" id="inputName" placeholder="Last Name" required>
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
+
+                <div class="form-group">
+                    <label for="mobileNumber" class="fa fa-mobile"></label>
+                    <input type="tel" placeholder="Mobile Number" formControlName="mobileNumber">
+                    <span class="text-danger" *ngIf="regForm.controls.mobileNumber.errors && regForm.controls.mobileNumber.touched">
+                        <br>Invalid Mobile Number
+                    </span>
                 </div>
-                <div class="was-validated">
-                    <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
-                    <input type="number" class="form-control" id="inputPhone" placeholder="Phone Number" required>
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
+
+                <div class="form-group">
+                    <label for="email" class="fa fa-envelope"></label>
+                    <input type="email" placeholder="Email Address" formControlName="email">
+                    <span class="text-danger" *ngIf="regForm.controls.email.errors && regForm.controls.email.touched">
+                        <br>Invalid Email Address
+                    </span>
                 </div>
-                <div class="was-validated">
-                    <label for="inputGender" class="col-sm-2 col-form-label">Gender</label>
-                    <input type="text" class="form-control" id="inputGender" placeholder="Gender" required>
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
+
+                <div class="form-group">
+                    <label for="password" class="fa fa-lock"></label>
+                    <input type="password" placeholder="Password" formControlName="password">
+                    <span class="text-danger" *ngIf="regForm.controls.password.errors && regForm.controls.password.touched">
+                        <br>Atleast 6 character Password is Required
+                    </span>
                 </div>
-                <div class="was-validated">
-                    <label for="inputEmail" class="col-sm-2 col-form-label">Email address</label>
-                    <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" required>
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
+
+                <div class="text-center">
+                    <button id="submitButton" type="submit" class="btn btn-primary" [disabled]="!regForm.valid">
+                        Register
+                    </button>
                 </div>
-                <div class="was-validated">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                    <input type="password" class="form-control" id="inputPassword">
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">Please fill out this field.</div>
+
+                <div class="text-success" *ngIf="successMessage">
+                    {{regForm.value.email}} mailId is {{successMessage}}
                 </div>
-            </div>
-            <div class="col-12">
-                <button class="btn btn-primary" type="submit">Add User</button>
-            </div>
-        </form>
-    </mat-card-content>
-    <mat-card-actions>
-    </mat-card-actions>
-</mat-card>
+
+            </form>
+        </div>
+    </div>
+</div>
