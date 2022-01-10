@@ -1,0 +1,101 @@
+<p>{{title}}</p>
+<br/>
+<table>
+    <thead>
+        <th colspan="2"> Date Formats </th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{dt}}</td>
+            <td> {{ dt | date }} </td>
+        </tr>
+        <tr>
+            <td> {{ dt | date:'short' }} </td>
+            <td> {{ dt | date:'shortDate' }} </td>
+        </tr>
+        <tr>
+            <td> {{ dt | date:'medium' }} </td>
+            <td> {{ dt | date:'mediumDate' }} </td>
+        </tr>
+        <tr>
+            <td> {{ dt | date:'long' }} </td>
+            <td> {{ dt | date:'longDate' }} </td>
+        </tr>
+        <tr>
+            <td> {{ dt | date:'full' }} </td>
+            <td> {{ dt | date:'fullDate' }} </td>
+        </tr>
+        <tr>
+            <td> {{ dt | date:'GG : yyyy : MMMM : dd' }} </td>
+            <td> {{ dt | date:'dd MMM yyyy' }} </td>
+        </tr>
+    </tbody>
+</table>
+
+<br/><br/>
+
+<div class="container">
+    <input type="text" class="form-control" value="{{dt|date:'fullDate'}}" [disabled]=isDisabled (keydown.Tab)="onKey($event)">
+    <br/>
+    <button class="btn btn-dark" (click)="onClick()">Enable / Disable</button>
+</div>
+
+<br/><br/>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Residing City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let userDetail of userDetails">
+            <th>{{userDetail.id}}</th>
+            <td>{{userDetail.name}}</td>
+            <td>{{userDetail.email}}</td>
+            <td>{{userDetail.phone}}</td>
+            <td>{{userDetail.address.city}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<br/><br/>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fruits</th>
+            <th>Cars</th>
+            <th>Vegetables</th>
+            <th>Courses</th>
+        </tr>
+    </thead>
+    <tbody>
+        <td>
+            <select name="" id="" class="form-control">
+                <option *ngFor="let fruits of fruits">{{fruits}}</option>
+            </select>
+        </td>
+        <td>
+            <select name="" id="" class="form-control">
+                <option *ngFor="let cars of cars">{{cars}}</option>
+            </select>
+        </td>
+        <td>
+            <select name="" id="" class="form-control">
+                <option *ngFor="let vegetables of vegetables">{{vegetables}}</option>
+            </select>
+        </td>
+        <td>
+            <select name="" id="" class="form-control">
+                <option *ngFor="let courses of courses">{{courses}}</option>
+            </select>
+        </td>
+    </tbody>
+</table>
+
+<br/><br/>
