@@ -7,6 +7,7 @@ import { OurProductsComponent } from './our-products/our-products.component';
 import { TermsComponent } from './terms/terms.component';
 import { AboutComponent } from './about/about.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { NewComponent } from './new/new.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
@@ -23,4 +24,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = [HomeComponent, OurProductsComponent,
-   TermsComponent, AboutComponent, ContactsComponent]
+   TermsComponent, AboutComponent, ContactsComponent, NewComponent]
