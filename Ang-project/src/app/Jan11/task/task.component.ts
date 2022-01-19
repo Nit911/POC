@@ -14,20 +14,30 @@ export class TaskComponent implements OnInit {
   
   edited : boolean = true
 
-  edit(userDetails:any){
+  edit(userDetail:any){
     this.edited = false
-    userDetails.isEdit = true
+    userDetail.isEdit = true
   }
   
-  cancel(userDetails:any){
-    userDetails.isEdit = false
+  cancel(userDetail:any){
+    userDetail.isEdit = false
   }
 
-  save(userDetails:any){
+  save(userDetail:any){
     alert("Update is Successful")
     this.edited = true
-    userDetails.isEdit = false
+    userDetail.isEdit = false
   }
+
+  // public dialog: MatDialog
+
+  openDialog(){
+    // this.dialog.open(DialogElements);
+  }
+
+  DialogElements(DialogElements: any) {
+  throw new Error('Function not implemented.');
+}
 
   userDetails = [
     {
@@ -272,3 +282,4 @@ export class TaskComponent implements OnInit {
     }
   ]
 }
+
